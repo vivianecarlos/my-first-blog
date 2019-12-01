@@ -1,7 +1,7 @@
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Pessoa, Medico, Paciente, Prontuario
+from .models import Pessoa
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 

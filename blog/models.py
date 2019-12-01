@@ -22,33 +22,3 @@ class Pessoa(models.Model):
 
     def __str__(self):
         return self.nome
-
-class Medico(Pessoa):
-    cnpj = models.CharField(max_length=11)
-    crm = models.CharField(max_length=11)
-    especialidade = models.CharField(max_length=20)
-
-    def publish(self):
-        #self.published_date = timezone.now()
-        self.save()
-
-    def __str__(self):
-        return self.nome
-
-class Paciente(Pessoa):
-    peso = models.CharField(max_length=6)
-    altura = models.CharField(max_length=6)
-    profissao = models.CharField(max_length=20)
-    
-    def publish(self):
-        self.save()
-    
-    def __str__(self):
-        return self.nome
-
-class Prontuario(models.Model):
-    identificacao = Paciente()
-    exame = models.TextField()
-    hipotese_diagnostica = models.TextField()
-    anamnese = models.TextField()
-    diagnostico_atual = models.TextField()
